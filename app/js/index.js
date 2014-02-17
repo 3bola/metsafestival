@@ -140,7 +140,7 @@ function cloudAnim() {
     duration: 75000,
     easing: 'linear'
   }, {
-    opacity: .6,
+    opacity: .5,
     duration: 5000,
     easing: 'linear'
   }]);
