@@ -1,0 +1,181 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+@font-face {
+  font-family: MathleteSkinny;
+  src: url("../fonts/Mathlete-Skinny.otf") format("opentype");
+  -webkit-font-smoothing: antialiased; }
+
+@font-face {
+  font-family: MathleteSkinnySlant;
+  src: url("../fonts/Mathlete-SkinnySlant.otf") format("opentype");
+  -webkit-font-smoothing: antialiased; }
+
+@font-face {
+  font-family: MathleteBulky;
+  src: url("../fonts/Mathlete-Bulky.otf") format("opentype");
+  -webkit-font-smoothing: antialiased; }
+
+@font-face {
+  font-family: MathleteBulkySlant;
+  src: url("../fonts/Mathlete-BulkySlant.otf") format("opentype");
+  -webkit-font-smoothing: antialiased; }
+
+/*
+  Basic structure
+
+  z-indexes
+  5   #background
+  10  #site
+  100 #navigation
+*/
+html, body {
+  height: 100%;
+  background: #333 url('../img/background.jpg') no-repeat 50% 0%;
+  background-attachment: fixed;
+  background-size: cover;
+  font-size: 14px; }
+
+#background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 5; }
+  #background div {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%; }
+
+#clouds img {
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+  -webkit-transform: translate3d(0, 0, 0) scale(2.9, 2.9);
+  transform: translate3d(0, 0, 0) scale(2.9, 2.9);
+  -webkit-transform: translate3d(0, 0, 0) scale(2.9, 2.9);
+  -moz-transform: translate3d(0, 0, 0) scale(2.9, 2.9); }
+
+#site {
+  position: absolute;
+  width: 100%;
+  z-index: 10; }
+
+#logo {
+  width: 952px;
+  height: 333px;
+  margin: 0 auto; }
+  #logo img {
+    width: 100%; }
+
+#navigation ul {
+  font-size: 0px; }
+#navigation li {
+  display: inline; }
+#navigation #primary {
+  position: absolute;
+  z-index: 100;
+  top: 40px;
+  width: 100%;
+  text-align: center; }
+#navigation #language {
+  position: absolute;
+  top: 40px;
+  right: 40px; }
+  #navigation #language a {
+    font-size: 26px;
+    padding: 4px 14px 8px; }
+#navigation a {
+  background: rgba(0, 0, 0, 0.33) url(../img/background-pattern.png) repeat;
+  display: inline;
+  padding: 7px 20px 13px;
+  font-family: 'MathleteBulky';
+  text-decoration: none;
+  color: white;
+  font-size: 36px;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 0px 0px 15px #000;
+  text-transform: uppercase; }
+
+#page {
+  width: 840px;
+  margin: -40px auto 0; }
+
+/**
+ * Content
+ */
+h1, h2, h3 {
+  font-family: 'MathleteBulky';
+  color: white;
+  font-size: 52px;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5), 0px 0px 10px black, 0px 0px 5px black;
+  margin-bottom: 0.3em; }
+
+h2 {
+  font-size: 40px; }
+
+h3 {
+  font-size: 32px;
+  margin-bottom: 0.5em; }
+
+p {
+  font-family: 'Fauna One', cursive;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  font-size: 15px;
+  color: white;
+  line-height: 1.5em;
+  margin: 0 0 1em; }
+  p:last-child {
+    margin-bottom: 0px; }
+
+#page .content {
+  padding: 20px;
+  margin-bottom: 20px;
+  background: rgba(0, 0, 0, 0.5) url(../img/background-pattern.png) repeat; }
+#page .image {
+  text-align: center;
+  padding: 1.5em; }
+  #page .image img {
+    max-width: 600px; }
+  #page .image.right {
+    float: right; }
+  #page .image.left {
+    float: left; }

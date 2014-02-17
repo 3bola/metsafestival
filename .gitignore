@@ -1,0 +1,9 @@
+# System-level
+.DS_Store
+
+# App stuff
+.sass-cache
+npm-debug.log
+material/
+node_modules/
+app/lib/
