@@ -1,3 +1,38 @@
+$(function(){
+
+  $('a.navigate').click(function(e){
+    e.preventDefault();
+    $('.page.active').removeClass('active');
+    $($(this).attr('href')).addClass('active');
+  });
+
+  $('.artist-small').click(function(e){
+    e.preventDefault();
+    $('#' + $(this).data('target')).lightbox_me({
+      modalCSS: {
+        top: '80px'
+      },
+      overlayCSS: {
+        background: 'black',
+        opacity: 0.8
+      }
+    });
+  });
+
+  $('.gallery .gallery-image').click(function(e){
+    var image = $(this).find('img').clone();
+    var popup = $('<div></div>').attr('id', 'gallery-image-popup').append(image).hide();
+    popup.lightbox_me({
+      modalCSS: {
+        top: '0px',
+        left: '0px',
+        width: '100%',
+        height: '100%'
+      }
+    });
+  });
+});
+
 /* Dust particles */
 
 var canvas, context, WIDTH, HEIGHT, interval = 50, particles = [];
@@ -115,6 +150,8 @@ $(document).ready(function(){
 
 var clouds = [1, 2, 3, 4, 5, 6, 7], curCloud = 0, world = anima.world();
 
+var length = 140000;
+
 function animaItem(el) {
   if (!world) world = a.world();
   var index = world.items.indexOf(el);
@@ -137,10 +174,10 @@ function cloudAnim() {
     translate: [$(window).width()*2, 0, 0],
     rotate: [0, 0, 20],
     scale: [2.9, 2.9],
-    duration: 75000,
+    duration: length,
     easing: 'linear'
   }, {
-    opacity: .5,
+    opacity: .4,
     duration: 5000,
     easing: 'linear'
   }]);
@@ -155,11 +192,11 @@ function startCloudAnimation() {
     if(animationTimeout) clearTimeout(animationTimeout);
     animationTimeout = setTimeout(function(){
       cloudAnim();
-      cloudAnimInt = setInterval(cloudAnim, 60000);
+      cloudAnimInt = setInterval(cloudAnim, length-30000);
     }, 30000);
   } else {
     cloudAnim();
-    cloudAnimInt = setInterval(cloudAnim, 60000);
+    cloudAnimInt = setInterval(cloudAnim, length-30000);
     animationStarted = true;
   }
 }
