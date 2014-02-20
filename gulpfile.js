@@ -81,11 +81,20 @@ gulp.task('watch', function(){
   })
 });
 
-gulp.task('build', function(){
-
-  // Clean
-  gulp.src([ paths.build.root + '/**/*', paths.build.root + '/**/**/*' ], { read: false })
+gulp.task('clean', function(){
+  gulp.src([ paths.build.root + '/**/*', paths.build.root + '/*', paths.build.root ], { read: false })
     .pipe(clean());
+});
+
+gulp.task('build', ['clean'], function(){
+
+  // Fonts
+  gulp.src(paths.app.fonts + '/**/*')
+    .pipe(gulp.dest(paths.build.fonts));
+
+  // HTML files
+  gulp.src(paths.app.root + '/**/*.html')
+    .pipe(gulp.dest(paths.build.root));
 
   // Scripts
   gulp.src(paths.app.js + '/**/*.js')
@@ -107,16 +116,8 @@ gulp.task('build', function(){
     .pipe(gulp.dest(paths.build.images));
 
   // Libraries
-  gulp.src(paths.app.lib + '/**/*')
+  gulp.src([ paths.app.lib + '/**/*' ])
     .pipe(gulp.dest(paths.build.lib));
-
-  // Fonts
-  gulp.src(paths.app.fonts + '/**/*')
-    .pipe(gulp.dest(paths.build.fonts));
-
-  // HTML files
-  gulp.src(paths.app.root + '/**/*.html')
-    .pipe(gulp.dest(paths.build.root));
 
 });
 

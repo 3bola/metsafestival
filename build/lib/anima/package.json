@@ -1,0 +1,7 @@
+{
+  "name": "anima",
+  "version": "0.3.2",
+  "devDependencies": {
+    "uglify-js": "*"
+  }
+}
